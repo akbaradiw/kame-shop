@@ -1,0 +1,14 @@
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+}
+
+.donut {
+
+    width: 30%;
+}
