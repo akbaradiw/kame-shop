@@ -8,10 +8,10 @@ import SearchProducts from "../../components/SearchProducts";
 const Products = () => {
     return (
         <div>
-            <Navbar />
-            <FilterProducts />
+            {/* <Navbar /> */}
+            {/* <FilterProducts /> */}
             <ProductList />
-            <SearchProducts />
+            {/* <SearchProducts /> */}
             <Footer />
         </div>
     );
