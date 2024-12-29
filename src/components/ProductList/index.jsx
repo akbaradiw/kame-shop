@@ -4,7 +4,8 @@ import { GrView } from "react-icons/gr";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { GrPowerReset } from "react-icons/gr";
 import { GiShoppingCart } from "react-icons/gi";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { getCartFromLocalStorage, saveCartToLocalStorage } from "../../helper/helper";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -13,6 +14,8 @@ const ProductList = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [filter, setFilter] = useState(false);
+  const [cart, setCart] = useState(getCartFromLocalStorage());
+  const [error, setError] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -21,26 +24,15 @@ const ProductList = () => {
       setFilteredProducts(response.data);
     } catch (error) {
       console.error("Failed to fetch products:", error);
+      setError("Failed to fetch products. Please try again later.");
     }
   };
 
+
+  
   useEffect(() => {
     getProducts();
   }, []);
-
-  const handleSearchName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleCategory = (e) => {
-    setCategory(e.target.value);
-    setFilter(true);
-  };
-
-  const handlePrice = (e) => {
-    setPrice(e.target.value);
-    setFilter(true);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,32 +64,31 @@ const ProductList = () => {
     setFilter(false);
   };
 
-  const handleView = (id) => {
-    // <Link to={`/detail/${product.id}`}></Link>
-  };
-
-  const handleAddToCart = (id) => {
-    console.log("Add product with ID:", id, "to cart.");
+  const handleAddToCart = (product) => {
+    const updateCart = [...cart, product];
+    setCart(updateCart);
+    saveCartToLocalStorage(updateCart);
   };
 
   return (
     <div className="py-4">
-      <div className=" lg:mx-40 mx-4   rounded-md bg-zinc-100">
+      {error && <p className="text-red-500 text-center">{error}</p>}
+      <div className="lg:mx-40 mx-4 rounded-md bg-zinc-100">
         <form
-          className="flex flex-wrap  gap-4 m-1 p-3 lg:m-4 lg:p-4  justify-center sm:grid sm:grid-cols-1 md:flex"
+          className="flex flex-wrap gap-4 m-1 p-3 lg:m-4 lg:p-4 justify-center"
           onSubmit={handleSubmit}
         >
           <input
-            className="w-full  sm:w-auto md:flex-1 p-2 border rounded-md"
+            className="w-full sm:w-auto md:flex-1 p-2 border rounded-md"
             type="text"
             placeholder="Search by name"
             value={name}
-            onChange={handleSearchName}
+            onChange={(e) => setName(e.target.value)}
           />
           <select
             className="w-full sm:w-auto text-emerald-600 font-semibold md:flex-1 p-2 border rounded-md"
             value={category}
-            onChange={handleCategory}
+            onChange={(e) => setCategory(e.target.value)}
           >
             <option value="">Category</option>
             <option value="men's clothing">Men's Clothing</option>
@@ -108,7 +99,7 @@ const ProductList = () => {
           <select
             className="w-full sm:w-auto md:flex-1 p-2 border text-emerald-600 font-semibold rounded-md"
             value={price}
-            onChange={handlePrice}
+            onChange={(e) => setPrice(e.target.value)}
           >
             <option value="">Price</option>
             <option value="0-50">0-50</option>
@@ -118,7 +109,7 @@ const ProductList = () => {
           </select>
           <div className="flex gap-2">
             <button
-              className="bg-blue-500 hover:bg-blue-600 text-white p-2  rounded-full"
+              className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full"
               type="submit"
             >
               <FaRegCheckCircle className="lg:text-2xl md:text-xl" />
@@ -135,14 +126,14 @@ const ProductList = () => {
           </div>
         </form>
       </div>
-      <div className="grid grid-cols-1 mt-10   lg:px-40 px-10 lg:pt-10  sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 mt-10 lg:px-40 px-10 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id}>
-              <div className="transition  border-2 transform hover:scale-105 hover:shadow-xl rounded-lg overflow-hidden">
+              <div className="transition border-2 transform hover:scale-105 hover:shadow-xl rounded-lg overflow-hidden">
                 <div className="bg-white">
                   <img
-                    className="w-full p-6 h-80 2xl:h-96 sm:h-48 md:h-80 lg:h-60 object-cover rounded-t-lg"
+                    className="w-full p-6 h-80 sm:h-48 lg:h-60 object-cover rounded-t-lg"
                     src={product.image}
                     alt={product.title}
                   />
@@ -160,13 +151,10 @@ const ProductList = () => {
                     </p>
                   </div>
                   <div className="flex justify-start px-4 gap-2">
-                    {/* <button onClick={() => handleView(product.id)}> */}
                     <Link to={`/detail/${product.id}`}>
-                    <GrView />
+                      <GrView />
                     </Link>
-
-                    {/* </button> */}
-                    <button onClick={() => handleAddToCart(product.id)}>
+                    <button onClick={() => handleAddToCart(product)}>
                       <GiShoppingCart />
                     </button>
                   </div>
@@ -178,6 +166,7 @@ const ProductList = () => {
           <p className="text-center text-gray-500">No products found.</p>
         )}
       </div>
+
     </div>
   );
 };
