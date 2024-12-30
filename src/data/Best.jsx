@@ -9,23 +9,27 @@ export let Best = [
       name: "Bernadya Tshirt",
       price: 100000,
       image: product1,
+      rate: 24,
     },
     {
       id: 2,
       name: "Ring Elden Ring",
       price: 24000,
       image: product2,
+      rate: 90,
     },
     {
       id: 3,
       name: "Lababu",
       price: 40500,
       image: product3,
+      rate: 69,
     },
     {
       id: 4,
       name: "Straw Hat",
       price: 666,
       image: product4,
+      rate: 100,
     },
   ];

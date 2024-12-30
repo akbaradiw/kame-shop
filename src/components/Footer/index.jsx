@@ -4,7 +4,7 @@ import { GiTurtle } from "react-icons/gi";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-center bg-emerald-600 text-zinc-100 py-6 gap-6">
+    <div className="flex flex-col lg:flex-row lg:justify-center bg-emerald-600 text-zinc-100 bottom-0 w-full z-50 py-6 gap-6">
     <div className="px-4">
       <div className="pb-4">
         <h1 className="font-semibold">Headquarter</h1>

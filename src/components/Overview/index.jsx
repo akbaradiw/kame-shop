@@ -5,7 +5,8 @@ import { MdOutlinePayment, MdLocalShipping } from "react-icons/md";
 
 const Overview = () => {
   return (
-    <div className="p-4 bg-emerald-600 md:p-8 lg:p-10">
+    <div className="p-10">
+    <div className="p-4 rounded-md shadow-md bg-emerald-600  ">
       {/* <div className="text-center mb-8">
         <h1 className="text-2xl md:text-4xl lg:text-2xl font-bold text-zinc-100">
           Overview
@@ -23,7 +24,7 @@ const Overview = () => {
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg font-semibold  text-zinc-100">
+            <p className="text-lg   text-zinc-100">
               100% Secure Payment
             </p>
           </div>
@@ -39,7 +40,7 @@ const Overview = () => {
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg font-semibold text-zinc-100">
+            <p className="text-lg  text-zinc-100">
               On orders over $2500
             </p>
           </div>
@@ -55,12 +56,13 @@ const Overview = () => {
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg font-semibold text-zinc-100">
+            <p className="text-lg  text-zinc-100">
               100% Top Quality Product
             </p>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { GiShirt, GiHealthPotion } from "react-icons/gi";
 import { LuMonitorSmartphone } from "react-icons/lu";
 import { MdToys } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
@@ -15,7 +16,9 @@ const CallToAction = () => {
         <div className="grid lg:grid-cols-2 md:grid-cols-2 lg:gap-20 gap-10 pt-10">
           <div>
             <div className="flex justify-center">
-              <GiShirt className="text-6xl text-emerald-600 " />
+              <Link to="/products">
+                <GiShirt className="text-6xl text-emerald-600 " />
+              </Link>
             </div>
             <div className="flex justify-center">
               <h1 className="text-emerald-600 ">Fashion</h1>
@@ -23,7 +26,9 @@ const CallToAction = () => {
           </div>
           <div>
             <div className="flex justify-center">
-              <LuMonitorSmartphone className="text-6xl text-emerald-600 " />
+              <Link to="/products">
+                <LuMonitorSmartphone className="text-6xl text-emerald-600 " />
+              </Link>
             </div>
             <div className="flex justify-center">
               <h1 className="text-emerald-600">Electronics</h1>
@@ -31,7 +36,9 @@ const CallToAction = () => {
           </div>
           <div>
             <div className="flex justify-center">
-              <GiHealthPotion className="text-6xl text-emerald-600 " />
+              <Link to="/products">
+                <GiHealthPotion className="text-6xl text-emerald-600 " />
+              </Link>
             </div>
             <div className="flex justify-center">
               <h1 className="text-emerald-600">Beauty & Health</h1>
@@ -39,6 +46,7 @@ const CallToAction = () => {
           </div>
           <div>
             <div className="flex justify-center">
+              <Link to="/products"></Link>
               <MdToys className="text-6xl text-emerald-600 " />
             </div>
             <div className="flex justify-center">

@@ -3,7 +3,7 @@ const Subscribes = () => {
   return (
     <div className="pt-10 pb-4  bg-emerald-600">
       <div>
-        <h1 className="text-2xl  font-bold text-center  text-zinc-100">
+        <h1 className="md:text-xl lg:text-2xl text-lg font-bold text-center  text-zinc-100">
           Subscribe to our newsletter to receive updates about the products and
           enjoy awesome gifts!
         </h1>
