@@ -6,25 +6,25 @@ import { MdOutlinePayment, MdLocalShipping } from "react-icons/md";
 const Overview = () => {
   return (
     <div className="p-10">
-    <div className="p-4 rounded-md shadow-md bg-emerald-600  ">
+    <div className="p-5 rounded-md shadow-md bg-emerald-600  ">
       {/* <div className="text-center mb-8">
         <h1 className="text-2xl md:text-4xl lg:text-2xl font-bold text-zinc-100">
           Overview
         </h1>
       </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
         <div>
           <div className="flex justify-center">
             <MdOutlinePayment className="text-4xl mb-2 text-zinc-100" />
           </div>
           <div className="flex justify-center">
-            <h1 className="text-xl font-semibold mb-2 text-zinc-100">
+            <h1 className="text-xl font-semibold underline underline-offset-4 mb-2 text-zinc-100">
               Secure Payment
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg   text-zinc-100">
+            <p className="text-lg underline underline-offset-4  text-zinc-100">
               100% Secure Payment
             </p>
           </div>
@@ -35,12 +35,12 @@ const Overview = () => {
             <MdLocalShipping className="text-4xl text-center mb-2 text-zinc-100" />
           </div>
           <div className="flex justify-center">
-            <h1 className="text-xl font-semibold mb-2 text-zinc-100">
+            <h1 className="text-xl font-semibold underline underline-offset-4 mb-2 text-zinc-100">
               Free Shipping
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg  text-zinc-100">
+            <p className="text-lg underline underline-offset-4 text-zinc-100">
               On orders over $2500
             </p>
           </div>
@@ -51,12 +51,12 @@ const Overview = () => {
             <IoThumbsUpOutline className="text-4xl mb-2 text-zinc-100" />
           </div>
           <div className="flex justify-center">
-            <h1 className="text-xl font-semibold mb-2 text-zinc-100">
+            <h1 className="text-xl font-semibold mb-2 underline underline-offset-4 text-zinc-100">
               Top Quality Product
             </h1>
           </div>
           <div className="flex justify-center">
-            <p className="text-lg  text-zinc-100">
+            <p className="text-lg underline underline-offset-4  text-zinc-100">
               100% Top Quality Product
             </p>
           </div>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { GrView } from "react-icons/gr";
-// import { FaRegCheckCircle } from "react-icons/fa";
-// import { GrPowerReset } from "react-icons/gr";
+import swalert2 from "sweetalert2";
 import FilterProducts from "../FilterProducts";
 import { GiShoppingCart } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { getCartFromLocalStorage, saveCartToLocalStorage } from "../../helper/helper";
+import {
+  getCartFromLocalStorage,
+  saveCartToLocalStorage,
+} from "../../helper/helper";
+import { FaStar } from "react-icons/fa";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -29,8 +31,6 @@ const ProductList = () => {
     }
   };
 
-
-  
   useEffect(() => {
     getProducts();
   }, []);
@@ -69,12 +69,22 @@ const ProductList = () => {
     const updateCart = [...cart, product];
     setCart(updateCart);
     saveCartToLocalStorage(updateCart);
+
+    swalert2.fire({
+      icon: "success",
+      title: "Item Added to Cart Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
+
+
 
   return (
     <div className="py-4">
       {error && <p className="text-red-500 text-center">{error}</p>}
-      <FilterProducts className="z-50 fixed w-full"
+      <FilterProducts
+        className="z-50 fixed w-full"
         handleSubmit={handleSubmit}
         name={name}
         setName={setName}
@@ -98,23 +108,36 @@ const ProductList = () => {
                   />
                 </div>
                 <div className="px-4 pb-2 bg-zinc-100">
-                  <h1 className="text-base font-semibold mb-4 pt-2 text-emerald-600">
-                    {product.title}
-                  </h1>
+                  <p className=" text-sm text-end pt-2 text-emerald-500 underline underline-offset-4">
+                    #{product.category}
+                  </p>
+                  <Link to={`/detail/${product.id}`}>
+                    <h1 className="text-base text-ellipsis overflow-hidden hover:text-cyan-600 font-semibold mb-4 pt-2 text-emerald-600">
+                      {product.title}
+                    </h1>
+                  </Link>
                   <div className="flex justify-between">
-                    <p className="text-emerald-600 font-semibold text-base">
+                    <p className="text-blue-500 font-semibold text-base">
                       ${product.price}
                     </p>
-                    <p className="text-emerald-600 font-semibold text-base">
-                      Rate: {product.rating.rate}
-                    </p>
+                    <div className="flex">
+                      <div className="flex pt-1 pe-2">
+                        <FaStar className=" text-sm text-yellow-400" />
+                        <FaStar className=" text-sm text-yellow-400" />
+                        <FaStar className=" text-sm text-yellow-400" />
+                        <FaStar className=" text-sm text-yellow-400" />
+                      </div>
+                      <p className="text-yellow-400 font-semibold text-base">
+                        {product.rating.rate}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex justify-start px-4 gap-2">
-                    <Link to={`/detail/${product.id}`}>
-                      <GrView />
-                    </Link>
-                    <button onClick={() => handleAddToCart(product)}>
-                      <GiShoppingCart />
+                  <div className="flex justify-end pt-3">
+                    <button
+                      className="bg-pink-400 py-1 hover:bg-blue-600 px-4 rounded-sm"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      <GiShoppingCart className="text-xl text-white" />
                     </button>
                   </div>
                 </div>
@@ -125,7 +148,6 @@ const ProductList = () => {
           <p className="text-center text-gray-500">No products found.</p>
         )}
       </div>
-
     </div>
   );
 };

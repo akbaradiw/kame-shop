@@ -51,7 +51,7 @@ const Navbar = () => {
               </div>
               <div className="pt-1">
                 <Link to={"/cart"}>
-                  <TiShoppingCart className="text-2xl shadow-sm hover:text-black  text-emerald-600" />
+                  <TiShoppingCart className="text-2xl hover:text-black  text-emerald-600" />
                 </Link>
               </div>
             </div>

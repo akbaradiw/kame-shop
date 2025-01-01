@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import { FaStar } from "react-icons/fa";
 const Detail = () => {
   const param = useParams();
 
@@ -39,13 +40,19 @@ const Detail = () => {
           <button className="text-sm md:text-lg bg-emerald-600 px-4 py-2 rounded-md font-medium text-zinc-100 mt-2">
             #{detail.category}
           </button>
-          <h1 className="text-lg md:text-xl pt-4 font-bold text-emerald-600">
+          <div className="flex pt-4 gap-2">
+            <FaStar className=" lg:text-lg md:text-base text-sm text-yellow-400" />
+            <FaStar className=" lg:text-lg md:text-base text-sm text-yellow-400" />
+            <FaStar className=" lg:text-lg md:text-base text-sm text-yellow-400" />
+            <FaStar className=" lg:text-lg md:text-base text-sm text-yellow-400" />
+          </div>
+          <h1 className="text-lg md:text-xl pt-3 font-bold text-emerald-600">
             {detail.title}
           </h1>
           <p className="text-sm md:text-base text-emerald-600 mt-3">
             {detail.description}
           </p>
-          <h2 className="text-base md:text-lg font-medium text-emerald-600 mt-2">
+          <h2 className="text-base md:text-lg font-medium text-blue-600 mt-2">
             ${detail.price}
           </h2>
         </div>
