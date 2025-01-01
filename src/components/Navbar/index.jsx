@@ -31,19 +31,19 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4 gap-3">
               <div className="pt-1">
                 <Link to={"/"}>
-                  <IoHomeOutline className="text-2xl 2xl:text-4xl hover:text-red-500  text-emerald-600" />
+                  <IoHomeOutline className="text-2xl 2xl:text-3xl hover:text-red-500  text-emerald-600" />
                 </Link>
               </div>
               <div className="pt-1">
                 <Link to={"/login"}>
-                  <SlUser className="text-2xl 2xl:text-4xl hover:text-blue-600  text-emerald-600" />
+                  <SlUser className="text-2xl 2xl:text-3xl hover:text-blue-600  text-emerald-600" />
                 </Link>
               </div>
               <div className="p-1 hover:outline-1 hover:outline-black ">
                 <Link to={"/products"}>
                   <p
                     href="#"
-                    className="text-emerald-600 hover:text-black 2xl:text-2xl   font-semibold"
+                    className="text-emerald-600 hover:text-black 2xl:text-xl   font-semibold"
                   >
                     Products
                   </p>
@@ -51,7 +51,7 @@ const Navbar = () => {
               </div>
               <div className="pt-1">
                 <Link to={"/cart"}>
-                  <TiShoppingCart className="text-2xl hover:text-black 2xl:text-4xl  text-emerald-600" />
+                  <TiShoppingCart className="text-2xl hover:text-black 2xl:text-3xl  text-emerald-600" />
                 </Link>
               </div>
             </div>
