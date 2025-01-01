@@ -81,7 +81,7 @@ const ProductList = () => {
 
 
   return (
-    <div className="py-4">
+    <div className="py-6">
       {error && <p className="text-red-500 text-center">{error}</p>}
       <FilterProducts
         className="z-50 fixed w-full"
@@ -95,7 +95,7 @@ const ProductList = () => {
         handleReset={handleReset}
         filter={filter}
       />
-      <div className="grid grid-cols-1 mt-10 lg:px-40 px-10 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 mt-10 lg:px-40 px-10 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-10">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id}>

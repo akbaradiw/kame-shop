@@ -8,30 +8,32 @@ const HeroSection = () => {
   return (
     <div className="bg-zinc-100 flex flex-col md:flex-row items-center justify-between p-4 md:p-8 lg:p-16">
       <div className="w-full md:w-1/2 mb-6 md:pt-0 pt-4 md:mb-0">
-        <h1 className="text-base text-emerald-600 md:text-lg lg:text-xl font-semibold mb-4 text-center md:text-left">
+        <h1 className="text-base text-emerald-600 md:text-lg lg:text-2xl 2xl:text-3xl font-semibold mb-4 text-center md:text-left">
           WINTER / SPRING COLLECTION 2025
         </h1>
-        <p className="text-base md:text-lg lg:text-5xl leading-relaxed text-emerald-600 mb-6 text-center md:text-left">
+        <div className="2xl:w-3/4">
+        <p className="text-base md:text-lg lg:text-5xl 2xl:text-6xl leading-relaxed text-emerald-600 mb-6 text-center md:text-left">
           Get up to 12% Off New Arrivals
         </p>
+        </div>
         <div className="text-center md:text-left ">
           <Link to={"/products"}>
-            <button className="bg-emerald-600 font-semibold text-zinc-100 px-6 py-2 rounded-sm hover:bg-blue-700 ">
+            <button className="bg-emerald-600 2xl:px-8 2xl:py-4 font-semibold text-zinc-100 px-6 py-2 rounded-sm hover:bg-blue-700 ">
               SHOP NOW
             </button>
           </Link>
         </div>
         <div className="flex justify-center lg:justify-end lg:pe-12 gap-8 pt-7 md:pt-6 ">
           <div>
-            <h1 className="text-2xl md:text-xl text-center text-blue-600 font-bold">2k+</h1>
+            <h1 className="lg:text-2xl 2xl:text-4xl text-lg text-center text-blue-600 font-bold">2k+</h1>
             <p className="text-center  ">Brands</p>
           </div>
           <div>
-          <h1 className="text-2xl md:text-xl text-center text-red-600 font-bold">100+</h1>
+          <h1 className="lg:text-2xl 2xl:text-4xl text-lg text-center text-red-600 font-bold">100+</h1>
           <p className="text-center  ">Shops</p>
           </div>
           <div>
-          <h1 className="text-2xl md:text-xl text-center text-yellow-500 font-bold">666k+</h1>
+          <h1 className="lg:text-2xl 2xl:text-4xl text-lg text-center text-yellow-500 font-bold">666k+</h1>
           <p className="text-center  ">Customers</p>
           </div>
         </div>

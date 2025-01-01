@@ -15,13 +15,13 @@ const Navbar = () => {
   return (
     <div className="pb-14">
       <nav className="bg-white shadow-zinc-100 shadow-sm text-emerald-600 z-50 fixed w-full ">
-        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 2xl:px-0 lg:px-8 ">
           <div className="flex justify-between items-center h-16">
             {/* Logo Section */}
             <Link to={"/"}>
-              <div className="flex gap-3 pt-4 pb-3 items-center">
-                <GiTurtle className="text-4xl text-emerald-600" />
-                <h1 className="font-bold text-lg text-emerald-600 pt-1 italic">
+              <div className="flex gap-3  pt-4 pb-3 items-center">
+                <GiTurtle className="text-4xl 2xl:text-5xl text-emerald-600" />
+                <h1 className="font-bold text-lg  2xl:text-2xl  text-emerald-600 pt-1 italic">
                   KAME SHOP
                 </h1>
               </div>
@@ -31,19 +31,19 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4 gap-3">
               <div className="pt-1">
                 <Link to={"/"}>
-                  <IoHomeOutline className="text-2xl shadow-sm hover:text-red-500  text-emerald-600" />
+                  <IoHomeOutline className="text-2xl 2xl:text-4xl hover:text-red-500  text-emerald-600" />
                 </Link>
               </div>
               <div className="pt-1">
                 <Link to={"/login"}>
-                  <SlUser className="text-2xl shadow-sm hover:text-blue-600  text-emerald-600" />
+                  <SlUser className="text-2xl 2xl:text-4xl hover:text-blue-600  text-emerald-600" />
                 </Link>
               </div>
               <div className="p-1 hover:outline-1 hover:outline-black ">
                 <Link to={"/products"}>
                   <p
                     href="#"
-                    className="text-emerald-600 hover:text-black   font-semibold"
+                    className="text-emerald-600 hover:text-black 2xl:text-2xl   font-semibold"
                   >
                     Products
                   </p>
@@ -51,7 +51,7 @@ const Navbar = () => {
               </div>
               <div className="pt-1">
                 <Link to={"/cart"}>
-                  <TiShoppingCart className="text-2xl hover:text-black  text-emerald-600" />
+                  <TiShoppingCart className="text-2xl hover:text-black 2xl:text-4xl  text-emerald-600" />
                 </Link>
               </div>
             </div>
